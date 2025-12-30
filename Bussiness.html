@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellwith Style Business Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f9fb;
+    color:#222;
+}
+
+/* NAVBAR */
+header{
+    background:#ffffff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#0a5cff;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#0a5cff;
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:80px 8%;
+    background:linear-gradient(120deg,#0a5cff,#00c6ff);
+    color:#fff;
+}
+
+.hero-text{
+    max-width:550px;
+}
+
+.hero-text h1{
+    font-size:48px;
+    line-height:1.2;
+}
+
+.hero-text p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.hero-text button{
+    padding:14px 30px;
+    background:#fff;
+    color:#0a5cff;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.hero img{
+    width:420px;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:36px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.service-box h3{
+    margin:20px 0 10px;
+}
+
+/* ABOUT */
+.about{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:420px;
+    border-radius:20px;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.testimonial{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* CONTACT */
+.contact form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input, .contact textarea{
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.contact button{
+    padding:15px;
+    background:#0a5cff;
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#0a5cff;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+    .hero img{
+        margin-top:40px;
+        width:100%;
+    }
+    .about{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Wellwith</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Luxury Wellness & Business Solutions</h1>
+        <p>We help brands grow with premium wellness, lifestyle and business services.</p>
+        <button>Get Started</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="">
+</section>
+
+<section id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+    </div>
+    <div class="services">
+        <div class="service-box">
+            <h3>Wellness Consulting</h3>
+            <p>Personalized wellness strategies for individuals and businesses.</p>
+        </div>
+        <div class="service-box">
+            <h3>Luxury Retreats</h3>
+            <p>High-end retreats designed for relaxation and productivity.</p>
+        </div>
+        <div class="service-box">
+            <h3>Business Growth</h3>
+            <p>Data-driven solutions to scale premium brands.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-title">
+        <h2>About Us</h2>
+    </div>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+        <div>
+            <h3>Premium. Trusted. Effective.</h3>
+            <p>
+                We combine wellness, lifestyle and modern business strategies to help
+                individuals and companies achieve sustainable success.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>What Clients Say</h2>
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>“Absolutely premium experience. Highly recommended!”</p>
+            <strong>- Client A</strong>
+        </div>
+        <div class="testimonial">
+            <p>“Professional, reliable and luxurious service.”</p>
+            <strong>- Client B</strong>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+    </div>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 Wellwith. All Rights Reserved.
+</footer>
+
+</body>
+</html>
