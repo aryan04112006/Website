@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RR Tourist | Luxury Travel Worldwide</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background: #002147;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x700/?luxury,travel') center/cover no-repeat;
+      height: 70vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: #002147;
+    }
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px;
+      color: #222;
+    }
+    .card p {
+      margin: 0 15px 20px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .booking {
+      background: #002147;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .booking h2 {
+      margin-bottom: 20px;
+    }
+    .booking form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .booking input, .booking select {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+    }
+    .booking button {
+      background: gold;
+      color: #002147;
+      padding: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      background: #001d3d;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RR Tourist</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#book">Book a Tour</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Explore the World in Luxury & Style</h2>
+  </section>
+
+  <section class="section" id="destinations">
+    <h2>Top Destinations</h2>
+    <div class="destinations">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?dubai" alt="Dubai">
+        <h3>Dubai, UAE</h3>
+        <p>Luxury shopping, modern architecture & desert adventures await.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?monaco" alt="Monaco">
+        <h3>Monaco</h3>
+        <p>Experience royal living, casinos, yachts, and Mediterranean glamour.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?singapore" alt="Singapore">
+        <h3>Singapore</h3>
+        <p>Futuristic cityscape, gardens by the bay & fine dining luxury.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="book">
+    <h2>Book Your Tour</h2>
+    <form method="post">
+      <input type="text" placeholder="Your Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <select required>
+        <option value="">Select Destination</option>
+        <option>Dubai</option>
+        <option>Monaco</option>
+        <option>Singapore</option>
+      </select>
+      <input type="date" required />
+      <input type="number" placeholder="Number of Travelers" required />
+      <button id="rzp-button1">Pay & Book Tour</button>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script>
+      var options = {
+      "key": "YOUR_KEY_ID", // Replace with your Razorpay Key ID
+      "amount": "500000", // Amount in paise (₹5000.00)
+      "currency": "INR",
+      "name": "RR Tourist",
+      "description": "Luxury Tour Booking",
+      "image": "https://yourlogo.png", // Optional logo
+      "handler": function (response){
+      alert("Payment successful. ID: " + response.razorpay_payment_id);
+      },
+      "prefill": {
+      "name": "",
+      "email": "",
+      "contact": ""
+      },
+      "theme": {
+      "color": "#002147"
+      }
+      };
+      var rzp1 = new Razorpay(options);
+      document.getElementById('rzp-button1').onclick = function(e){
+      rzp1.open();
+      e.preventDefault();
+      }
+      </script>
+      <button type="submit">Submit Booking Request</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>📧 Email: info@rrtourist.com | ☎️ Phone: +91-9876543210</p>
+    <p>&copy; 2025 RR Tourist. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
